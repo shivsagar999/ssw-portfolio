@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:where([class^="ri-"])::before { content: "\f3c2"; }
+
+.skill-bar {
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
