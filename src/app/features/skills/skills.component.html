@@ -1,65 +1,16 @@
-<section class="py-20">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-16">Skills</h2>
-      <div class="grid grid-cols-2 gap-8">
-        <div class="space-y-6">
-          <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="text-gray-600">Angular</span>
-                <span class="text-gray-600">90%</span>
-              </div>
-              <div class="h-2 bg-gray-200 rounded">
-                <div
-                  class="skill-bar h-full bg-primary rounded"
-                  style="width: 90%"
-                ></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="text-gray-600">JavaScript</span>
-                <span class="text-gray-600">85%</span>
-              </div>
-              <div class="h-2 bg-gray-200 rounded">
-                <div
-                  class="skill-bar h-full bg-primary rounded"
-                  style="width: 85%"
-                ></div>
-              </div>
-            </div>
-          </div>
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div
+        *ngFor="let skill of skills"
+        class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition duration-300"
+      >
+        <div class="flex justify-center mb-4">
+          <img [src]="skill.icon" [alt]="skill.name" class="w-12 h-12" />
         </div>
-        <div class="space-y-6">
-          <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="text-gray-600">.NET</span>
-                <span class="text-gray-600">95%</span>
-              </div>
-              <div class="h-2 bg-gray-200 rounded">
-                <div
-                  class="skill-bar h-full bg-primary rounded"
-                  style="width: 95%"
-                ></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between mb-1">
-                <span class="text-gray-600">Hono</span>
-                <span class="text-gray-600">80%</span>
-              </div>
-              <div class="h-2 bg-gray-200 rounded">
-                <div
-                  class="skill-bar h-full bg-primary rounded"
-                  style="width: 80%"
-                ></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h3 class="text-lg font-semibold text-gray-800">{{ skill.name }}</h3>
       </div>
     </div>
-  </section>
+  </div>
+</section>
