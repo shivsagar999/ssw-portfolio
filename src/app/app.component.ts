@@ -15,5 +15,5 @@ import { ContactComponent } from "./features/contact/contact.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ssw-portfolio';
+  title = 'Shivsagar S. Wagle';
 }
