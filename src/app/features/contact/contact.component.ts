@@ -26,7 +26,7 @@ export class ContactComponent {
 
     const { name, email, message } = this.contactForm.value;
 
-    this.emailService.sendEmail(Constants.email, name + " - " + email + ": wants to reach out to u throgh ur website", 
+    this.emailService.sendEmail(Constants.email, name + " - " + email + ":  wants to reach out to u throgh ur website", 
       message ?? '');
   }
 }
