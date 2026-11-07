@@ -5,8 +5,19 @@
       <h2 class="section-title" id="toolkit-title">The right tools.<br><em>For the right reasons.</em></h2>
       <p class="section-intro">A practical stack for building across the web, from a considered interface to a dependable backend.</p>
     </div>
-    <ul class="skill-list">
-      <li *ngFor="let skill of skills">{{ skill.name }}</li>
-    </ul>
+    <div class="skill-grid">
+      @for (group of skillGroups; track group.name) {
+        <article class="skill-card">
+          <div class="skill-card-top" aria-hidden="true"><span class="skill-symbol">{{ group.symbol }}</span><span>0{{ $index + 1 }}</span></div>
+          <h3>{{ group.name }}</h3>
+          <p>{{ group.description }}</p>
+          <ul class="skill-list">
+            @for (skill of group.skills; track skill) {
+              <li>{{ skill }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
   </div>
 </section>

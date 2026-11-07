@@ -20,4 +20,16 @@ describe('SkillsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should group all existing skills into three readable categories', () => {
+    const page = fixture.nativeElement as HTMLElement;
+    expect(Array.from(page.querySelectorAll('h3'), heading => heading.textContent)).toEqual([
+      'Frontend', 'Backend & data', 'Cloud & workflow'
+    ]);
+    const names = Array.from(page.querySelectorAll('li'), item => item.textContent?.trim()).sort();
+    expect(names).toEqual([
+      '.NET', 'Hono', 'C#', 'Angular', 'SQL Server', 'MongoDB', 'JavaScript', 'TypeScript',
+      'HTML', 'CSS', 'Git', 'Azure', 'Visual Studio', 'Visual Studio Code', 'Cloudflare'
+    ].sort());
+  });
 });

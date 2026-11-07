@@ -164,10 +164,19 @@ app-about .approach p { margin: 0; color: #cbd1c7; font-size: 11px; line-height:
 }
 
 /* skills */
-app-skills .skill-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
-app-skills .skill-list li { padding: 10px 14px; border: 1px solid var(--line); border-radius: 4px; background: #f1f1ea; font-size: 12px; }
-@media (max-width: 760px) {
-  app-skills .skill-list li { font-size: 11px; padding: 9px 12px; }
+app-skills .skill-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+app-skills .skill-card { padding: 28px; border: 1px solid var(--line); border-top: 2px solid var(--ink); border-radius: 5px; background: #f1f1ea; }
+app-skills .skill-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; color: var(--accent); font-size: 11px; }
+app-skills .skill-symbol { font-family: monospace; font-size: 25px; line-height: 1; }
+app-skills h3 { margin: 0 0 12px; font-family: var(--serif); font-size: 28px; font-weight: 400; letter-spacing: -.8px; }
+app-skills .skill-card p { min-height: 44px; margin: 0 0 24px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+app-skills .skill-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; margin: 0; padding: 0; list-style: none; }
+app-skills .skill-list li { display: flex; align-items: center; gap: 8px; padding-block: 12px; border-top: 1px solid var(--line); font-size: 12px; line-height: 1.6; }
+app-skills .skill-list li::before { content: ''; flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 900px) {
+  app-skills .skill-grid { grid-template-columns: 1fr; }
+  app-skills .skill-card-top { margin-bottom: 20px; }
+  app-skills .skill-card p { min-height: 0; }
 }
 
 /* contact */
