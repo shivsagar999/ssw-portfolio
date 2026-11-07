@@ -1,16 +1,12 @@
-<section class="py-20 bg-gray-50">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div
-        *ngFor="let skill of skills"
-        class="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition duration-300"
-      >
-        <div class="flex justify-center mb-4">
-          <img [src]="skill.icon" [alt]="skill.name" class="w-12 h-12" />
-        </div>
-        <h3 class="text-lg font-semibold text-gray-800">{{ skill.name }}</h3>
-      </div>
+<section class="section" aria-labelledby="toolkit-title">
+  <div class="shell">
+    <p class="eyebrow"><span class="index">03 /</span> My toolkit</p>
+    <div class="section-heading">
+      <h2 class="section-title" id="toolkit-title">The right tools.<br><em>For the right reasons.</em></h2>
+      <p class="section-intro">A practical stack for building across the web, from a considered interface to a dependable backend.</p>
     </div>
+    <ul class="skill-list">
+      <li *ngFor="let skill of skills">{{ skill.name }}</li>
+    </ul>
   </div>
 </section>
