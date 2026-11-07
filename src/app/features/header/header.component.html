@@ -1,50 +1,14 @@
-<header
-      class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100"
-    >
-      <nav class="flex items-center justify-between px-6 h-16">
-        <a href="#" class="text-2xl font-bold text-primary">SW</a>
-        <div class="flex items-center gap-8">
-          <a
-            href="#home"
-            class="text-gray-600 hover:text-primary transition-colors"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="text-gray-600 hover:text-primary transition-colors"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="text-gray-600 hover:text-primary transition-colors"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="text-gray-600 hover:text-primary transition-colors"
-            >Projects</a
-          >
-          <a
-            href="#contact"
-            class="text-gray-600 hover:text-primary transition-colors"
-            >Contact</a
-          >
-          <div class="flex items-center gap-4">
-            <a
-              href="https://github.com/shivsagar999"
-              target="_blank"
-              class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors"
-            >
-              <i class="ri-github-line text-xl"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shivsagar-s-wagle-6b1721147/"
-              target="_blank"
-              class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary transition-colors"
-            >
-              <i class="ri-linkedin-line text-xl"></i>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </header>
+<header class="site-header" (keydown.escape)="menuOpen = false; menuToggle.focus()">
+  <nav class="shell navigation" aria-label="Main navigation">
+    <a href="#home" class="wordmark" aria-label="Shivsagar Wagle, home" (click)="menuOpen = false">sw<span>.</span></a>
+    <button #menuToggle class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" aria-controls="navigation-links" (click)="menuOpen = !menuOpen">
+      {{ menuOpen ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '×' : '+' }}</span>
+    </button>
+    <div id="navigation-links" class="navigation-links" [class.is-open]="menuOpen">
+      <a href="#projects" (click)="menuOpen = false">Selected work</a>
+      <a href="#about" (click)="menuOpen = false">About</a>
+      <a href="#skills" (click)="menuOpen = false">Toolkit</a>
+      <a href="#contact" class="nav-contact" (click)="menuOpen = false">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</header>
