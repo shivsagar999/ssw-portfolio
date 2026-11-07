@@ -1,14 +1,14 @@
 <header class="site-header" (keydown.escape)="menuOpen = false; menuToggle.focus()">
   <nav class="shell navigation" aria-label="Main navigation">
-    <a href="#home" class="wordmark" aria-label="Shivsagar Wagle, home" (click)="menuOpen = false">sw<span>.</span></a>
+    <a routerLink="/" fragment="home" class="wordmark" aria-label="Shivsagar Wagle, home" (click)="menuOpen = false">sw<span>.</span></a>
     <button #menuToggle class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" aria-controls="navigation-links" (click)="menuOpen = !menuOpen">
       {{ menuOpen ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '×' : '+' }}</span>
     </button>
     <div id="navigation-links" class="navigation-links" [class.is-open]="menuOpen">
-      <a href="#projects" (click)="menuOpen = false">Selected work</a>
-      <a href="#about" (click)="menuOpen = false">About</a>
-      <a href="#skills" (click)="menuOpen = false">Toolkit</a>
-      <a href="#contact" class="nav-contact" (click)="menuOpen = false">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a routerLink="/" fragment="projects" (click)="menuOpen = false">Selected work</a>
+      <a routerLink="/" fragment="about" (click)="menuOpen = false">About</a>
+      <a routerLink="/" fragment="skills" (click)="menuOpen = false">Toolkit</a>
+      <a routerLink="/" fragment="contact" class="nav-contact" (click)="menuOpen = false">Let’s talk <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
 </header>
